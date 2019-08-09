@@ -17,8 +17,7 @@ jobs:
             sed -i -e 's/ --no-use//' $BASH_ENV
       - run:
           name: Verify
-          command: |
-            node -v
-            npm -v
-            echo '{}' > package.json
-            npm install lodash
+          command: node -v && npm -v
+      - run: echo '{}' > package.json
+      - run: npm install lodash
+      - run: npm uninstall lodash
